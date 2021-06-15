@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.English">
-        <activity android:name=".QuizTextToSpeech"></activity>
+        <activity android:name="Vocabulary.VResult"
+            android:theme="@style/FullScreen"></activity>
+        <activity android:name="Vocabulary.Vocabulary_main" />
+        <activity android:name="QuizList.QuizListView" />
+        <activity android:name=".Result" />
+        <activity android:name=".quiz2" />
+        <activity android:name=".QuizTextToSpeech" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

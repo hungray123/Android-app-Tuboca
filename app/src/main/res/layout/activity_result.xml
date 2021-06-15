@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@drawable/bg_result"
+    tools:context=".Result">
+
+    <LinearLayout
+
+        android:layout_width="250dp"
+        android:padding="10dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_app_10"
+        android:orientation="vertical">
+
+        <TextView
+
+            android:id="@+id/TotalQuestionR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Correct Question: "
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            />
+        <TextView
+
+            android:id="@+id/totalPoint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Coins:123"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Amazing gut chop !"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:textColor="@color/white"
+            android:layout_marginTop="15dp"
+            >
+            <Button
+                android:id="@+id/btPlayAgain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PlayAgain"
+                android:layout_marginStart="30dp"
+                android:padding="5dp"
+                android:textSize="10dp"
+
+                android:textAllCaps="false"
+
+                />
+            <Button
+                android:id="@+id/btNext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Next"
+                android:padding="5dp"
+                android:textSize="10dp"
+                android:textAllCaps="false"
+               />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

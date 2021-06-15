@@ -1,30 +1,22 @@
 package com.example.english;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Handler;
-import android.speech.tts.TextToSpeech;
-import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity  implements  View.OnClickListener{
+import QuizList.QuizListView;
+import Vocabulary.Vocabulary_main;
 
-    private TextView quiztest;
-    private  TextView vocabulary;
-    private  TextView listening;
-    private  TextView Video;
+public class MainActivity extends AppCompatActivity  implements View.OnClickListener{
+
+    private TextView quizTest;
+    private TextView vocabulary;
+    private TextView listening;
+    private TextView Video;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,26 +31,29 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
 //        npoint.setText("Point:"+mpoint);
 //        //Media
 
-        quiztest = findViewById(R.id.quiztest);
-        quiztest.setOnClickListener(this);
+          quizTest = findViewById(R.id.quiztest);
+          quizTest.setOnClickListener(this);
         vocabulary=findViewById(R.id.vocabulary);
         vocabulary.setOnClickListener(this);
-        listening=findViewById(R.id.listening);
-        listening.setOnClickListener(this);
-        Video=findViewById(R.id.video);
-        Video.setOnClickListener(this);
+//        listening=findViewById(R.id.listening);
+//        listening.setOnClickListener(this);
+//        Video=findViewById(R.id.video);
+//        Video.setOnClickListener(this);
 
     }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.quiztest:
-                Intent intent = new Intent(MainActivity.this, QuizTextToSpeech.class);
+         case R.id.quiztest:
+                Intent intent =new Intent(MainActivity.this, QuizListView.class);
                 startActivity(intent);
                 Toast.makeText(this,"quiztest",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.vocabulary:
                 Toast.makeText(this,"vocabulary",Toast.LENGTH_SHORT).show();
+                Intent intent1 =new Intent(MainActivity.this, Vocabulary_main.class);
+                startActivity(intent1);
                 break;
             case R.id.listening:
                 Toast.makeText(this,"listening",Toast.LENGTH_SHORT).show();

@@ -4,6 +4,11 @@ public class Anwser {
     private  String content;
     private  boolean isCorrect;
 
+    public Anwser(String content, boolean isCorrect) {
+        this.content = content;
+        this.isCorrect = isCorrect;
+    }
+
     public String getContent() {
         return content;
     }
@@ -18,10 +23,5 @@ public class Anwser {
 
     public void setCorrect(boolean correct) {
         isCorrect = correct;
-    }
-
-    public Anwser(String content, boolean isCorrect) {
-        this.content = content;
-        this.isCorrect = isCorrect;
     }
 }

@@ -4,100 +4,208 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_app"
+    android:background="@drawable/bg_app_10"
     android:orientation="vertical"
     tools:context=".QuizTextToSpeech">
+
+
+    <RelativeLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        >
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_quesion"
+            android:layout_alignParentStart="true"
+
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="62dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="47dp"
+            android:layout_marginBottom="29dp"
+            android:progress="0"
+            android:progressTint="@color/gr" />
+
+        <TextView
+            android:text="Question"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="58dp"
+            android:layout_marginBottom="40dp"
+            android:paddingStart="6dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:gravity="right"
+
+            android:textStyle="bold"
+            android:textColor="#CC0099"
+            android:textSize="25dp" />
 
         <TextView
             android:id="@+id/tv_quesion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="38dp"
+            android:layout_marginBottom="39dp"
+            android:layout_toStartOf="@+id/coin"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:text="1/4"
+            android:textColor="#CC0099"
+            android:textSize="30sp" />
 
-            android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/bg_primary_dark_30"
-            android:paddingStart="20dp"
-            android:paddingTop="10dp"
-            android:paddingEnd="20dp"
-            android:paddingBottom="10dp"
-            android:text="Quesion 1"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/coin"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
 
-        <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_marginEnd="45dp"
+            android:layout_marginBottom="15dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/quizcoins" />
+
+        <TextView
+            android:id="@+id/point"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="20dp"
+             android:gravity="left"
+            android:textColor="#FFD700"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+
+            android:layout_marginEnd="42dp"
+            android:layout_marginBottom="50dp"
+
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:text="20" />
+
+
+    </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginTop="50dp">
+
+                <TextView
+                    android:id="@+id/tv_content_quesiton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:text="Click to listen"
+                    android:textSize="25sp" />
+
+                <ImageView
+                    android:id="@+id/id_img"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="156dp"
+                    android:layout_marginEnd="155dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:src="@drawable/ic_contact" />
+
+
+            </RelativeLayout>
+
+<!--        <TextView-->
+<!--            android:id="@+id/point"-->
+<!--            android:layout_width="110dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:padding="10dp"-->
+<!--            android:text="Point:100"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tv_content_quesiton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+
+<!--            android:layout_marginTop="60dp"-->
+<!--            android:gravity="center"-->
+<!--            android:paddingStart="10dp"-->
+<!--            android:paddingEnd="10dp"-->
+<!--            android:paddingBottom="20dp"-->
+<!--            android:text="Click to listen"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp" />-->
+
+<!--        <ImageView-->
+
+<!--            android:id="@+id/id_img"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="170dp"-->
+<!--            android:layout_gravity="end"-->
+<!--            android:src="@drawable/ic_contact" />-->
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp">
+
+
+        <TextView
+            android:id="@+id/tvAnswer1"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="75dp"
             android:layout_marginEnd="20dp"
-            android:background="@drawable/bg_blue_light_10">
+            android:layout_toStartOf="@+id/tvAnswer2"
+            android:background="@drawable/bg_answer_20"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="You"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
 
-            <TextView
-                android:id="@+id/point"
-                android:layout_width="110dp"
-                android:layout_height="50dp"
-                android:padding="10dp"
-                android:text="Point:100"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+        <TextView
+            android:id="@+id/tvAnswer2"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/bg_answer_20"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Love"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
 
-            <TextView
-                android:id="@+id/tv_content_quesiton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-                android:layout_marginTop="60dp"
-                android:gravity="center"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="20dp"
-                android:text="Click to listen"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-            <ImageView
-
-                android:id="@+id/id_img"
-                android:layout_width="50dp"
-                android:layout_height="170dp"
-                android:layout_gravity="end"
-                android:src="@drawable/ic_contact" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="30dp"
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/city"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="150dp"
+            app:lottie_autoPlay="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/city2"/>
 
-            <TextView
-                android:id="@+id/tv_ans1"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_blue_dark_10"
-                android:gravity="center"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp"
-                android:text="Love"
-                android:textColor="@android:color/white"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/tv_ans2"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:background="@drawable/bg_blue_dark_10"
-                android:gravity="center"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp"
-                android:text="Lave"
-                android:textColor="@android:color/white"
-                android:textSize="20sp" />
-
-        </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>
 
