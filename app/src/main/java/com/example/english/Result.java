@@ -1,6 +1,7 @@
 package com.example.english;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,8 @@ import QuizList.QuizListView;
 public class Result extends AppCompatActivity {
     Button btPlayAgain,btNext;
     TextView TotalQuestionR,totalPoint;
+    SharedPreferences myPref;
+    SharedPreferences.Editor myEditor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +26,14 @@ public class Result extends AppCompatActivity {
         btPlayAgain=findViewById(R.id.btPlayAgain);
         btNext=findViewById(R.id.btNext);
         Intent intent =getIntent();
-        int totalQuestion =intent.getIntExtra(Constants.TOTAL_QUESTION,0);
-        int totalQuestionR=intent.getIntExtra(Constants.TOTAL_QUESTION_R,0);
-        int total_point =intent.getIntExtra(Constants.POINT,0);
-        TotalQuestionR.setText(Constants.TOTAL_QUESTION_R+ String.valueOf(totalQuestionR+"/"+totalQuestion));
-        totalPoint.setText(Constants.POINT+String.valueOf(total_point));
+        int totalQuestion =intent.getIntExtra("TOTAL_QUESTION",0);
+        int totalQuestionR=intent.getIntExtra("TOTAL_QUESTION_R",0);
+        int total_point =intent.getIntExtra("COINS",0);
+        TotalQuestionR.setText(totalQuestionR+"/"+totalQuestion);
+        totalPoint.setText(String.valueOf(total_point));
+        myPref=getSharedPreferences("shareCorrect",MODE_PRIVATE);
+        myEditor=getSharedPreferences("shareCorrect",MODE_PRIVATE).edit();
+
 
         btPlayAgain.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,9 +46,13 @@ public class Result extends AppCompatActivity {
         btNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String a= String.valueOf(totalQuestion);
+                String b=String.valueOf(totalQuestionR);
+                myEditor.putString("totalQuestion",a);
+                myEditor.putString("totalQuestionR",b);
+                myEditor.commit();
                 Intent intent =new Intent(Result.this, QuizListView.class);
-
-//               intent.putExtra("QuestionRight",totalQuestionR);
+//                intent.putExtra("QuestionRight",totalQuestionR);
                 startActivity(intent);
             }
         });

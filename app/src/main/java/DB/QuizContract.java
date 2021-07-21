@@ -13,5 +13,12 @@ public class QuizContract {
         public  static  final  String COLUMN_ANSWER2="answer2";
         public  static  final  String COLUMN_ANSWER_R="Answer_r";
     }
+    public  static class QuestionsTable1 implements BaseColumns{
+        public  static  final  String TABLE_NAME="quiz_question_1";
+        public  static  final  String COLUMN_QUESTION="Question";
+        public  static  final  String COLUMN_ANSWER1="Answer1";
+        public  static  final  String COLUMN_ANSWER2="answer2";
+        public  static  final  String COLUMN_ANSWER_R="Answer_r";
+    }
 
 }

@@ -9,8 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.English">
-        <activity android:name="Vocabulary.VResult"
-            android:theme="@style/FullScreen"></activity>
+        <activity android:name="VocabularyFruits.Vocabulary_fruits"></activity>
+        <activity android:name="QuizList.Quizlv2" />
+        <activity android:name="TopicVocabulary.GridTopic" />
+        <activity
+            android:name="Vocabulary.VResult"
+            android:theme="@style/FullScreen" />
         <activity android:name="Vocabulary.Vocabulary_main" />
         <activity android:name="QuizList.QuizListView" />
         <activity android:name=".Result" />
@@ -23,6 +27,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:id="@+id/bg_themes"
+    tools:context="TopicVocabulary.GridTopic">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/icBack"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/arrow_back_24"/>
+
+        <TextView
+            android:id="@+id/tvBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@+id/icBack"
+            android:gravity="center_vertical"
+            android:text="Back"
+            android:textSize="22dp" />
+
+        <Switch
+            android:id="@+id/mySwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:track="@drawable/track_selector"
+            android:layout_alignParentEnd="true"
+            android:thumb="@drawable/ic_baseline_brightness_1_24"
+            android:layout_margin="5dp"/>
+
+
+        <TextView
+            android:id="@+id/txtTopic"
+            android:layout_below="@+id/tvBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chọn chủ đề"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textSize="30dp"/>
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hãy khám phá các chủ  đề của Toboca"
+            android:layout_below="@+id/txtTopic"
+            android:textSize="16dp"
+            android:layout_marginStart="20dp"/>
+
+
+
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/gridTopic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="auto_fit"
+        android:columnWidth="120dp"
+        android:gravity="center"
+        android:scrollbars="none"
+        android:background="@color/white"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>

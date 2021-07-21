@@ -7,8 +7,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.english.MainActivity;
 import com.example.english.R;
+
+import TopicVocabulary.GridTopic;
 
 public class VResult extends AppCompatActivity {
     TextView bt_Next;
@@ -21,7 +22,7 @@ public class VResult extends AppCompatActivity {
         bt_Next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(VResult.this, MainActivity.class);
+                Intent intent = new Intent(VResult.this, GridTopic.class);
                 startActivity(intent);
             }
         });

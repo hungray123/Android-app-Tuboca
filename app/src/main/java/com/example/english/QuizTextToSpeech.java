@@ -27,7 +27,6 @@ public class QuizTextToSpeech extends AppCompatActivity {
     public TextView tvContentQuestion;
     private TextView tvAnswer1,tvAnswer2;
     private TextView npoint;
-    int mpoint = 0;
     private ImageView speech;
     private TextToSpeech mTTS;
     private String text;
@@ -38,7 +37,7 @@ public class QuizTextToSpeech extends AppCompatActivity {
     int qid = 1;
     public int sizeofQuiz =4;
     private ProgressBar pBar;
-
+    int mpoint=0;
 
     private final Handler handler = new Handler();
     private final Handler handler2 = new Handler();
@@ -55,7 +54,7 @@ public class QuizTextToSpeech extends AppCompatActivity {
         setContentView(R.layout.activity_quiz_text_to_speech);
         QuizDbHelper dbHelper = new QuizDbHelper(this);
         dbHelper.getReadableDatabase();
-        questionList=dbHelper.getAllQuestions();
+        questionList=dbHelper.getAllQuestions_1();
         Collections.shuffle(questionList);
         currentQuestion=questionList.get(qid);
 
@@ -66,6 +65,7 @@ public class QuizTextToSpeech extends AppCompatActivity {
         tvAnswer2 = findViewById(R.id.tvAnswer2);
 
         npoint=findViewById(R.id.point);
+
         updateQuestion();
 
         wrongAnimation= AnimationUtils.loadAnimation(this,R.anim.wrong_animation);
@@ -129,14 +129,15 @@ public class QuizTextToSpeech extends AppCompatActivity {
         tvAnswer1.setBackgroundResource(R.drawable.bg_answer_20);
         tvAnswer2.setBackgroundResource(R.drawable.bg_answer_20);
 
-
         tvQuestion.setText( qid+"/"+sizeofQuiz);
 //        tvContentQuestion.setText(currentQuestion.getQuestion());
         tvAnswer1.setText(currentQuestion.getAnswer1());
         tvAnswer2.setText(currentQuestion.getAnswer2());
-        mpoint=mpoint+10;
         npoint.setText(""+mpoint);
-
+         if (qid==1){
+             mpoint=0;
+         }
+        mpoint=mpoint+10;
         int plus=0;
         int current=pBar.getProgress();
           if (current==pBar.getProgress()){
@@ -144,8 +145,6 @@ public class QuizTextToSpeech extends AppCompatActivity {
 
           }
         pBar.setProgress(current+plus);
-
-
 
     }
 
@@ -306,13 +305,12 @@ public class QuizTextToSpeech extends AppCompatActivity {
     }
 
     private void  FinalResult(){
-//        Intent resultIntent= new Intent(QuizTextToSpeech.this,Result.class);
-//        resultIntent.putExtra(Constants.TOTAL_QUESTION_R,correct);
-//        resultIntent.putExtra(Constants.TOTAL_QUESTION,sizeofQuiz);
-//        resultIntent.putExtra(Constants.POINT,mpoint);
-//        startActivity(resultIntent);
-        Intent result=new Intent(QuizTextToSpeech.this, Result.class);
-        startActivity(result);
+        Intent resultIntent= new Intent(QuizTextToSpeech.this,Result.class);
+        resultIntent.putExtra("TOTAL_QUESTION_R",correct);
+        resultIntent.putExtra("TOTAL_QUESTION",sizeofQuiz);
+        resultIntent.putExtra("COINS",mpoint);
+        startActivity(resultIntent);
+
     }
 
 

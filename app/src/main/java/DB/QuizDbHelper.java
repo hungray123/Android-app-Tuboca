@@ -12,11 +12,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import DB.QuizContract.QuestionsTable;
+import DB.QuizContract.QuestionsTable1;
 
 
 public class QuizDbHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "Quiz.db";
-    private static final int DATABASE_VERSION = 6;
+    private static final int DATABASE_VERSION =11;
 
     private SQLiteDatabase db;
 
@@ -39,11 +40,48 @@ public class QuizDbHelper extends SQLiteOpenHelper {
 
         db.execSQL(SQL_CREATE_QUESTIONS_TABLE);
         fillQuestionsTable();
+           //table2
+        final String SQL_CREATE_QUESTIONS_TABLE1 = "CREATE TABLE " +
+                QuestionsTable1.TABLE_NAME + " ( " +
+                QuestionsTable1._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                QuestionsTable1.COLUMN_QUESTION + " TEXT, " +
+                QuestionsTable1.COLUMN_ANSWER1 + " TEXT, " +
+                QuestionsTable1.COLUMN_ANSWER2 + " TEXT, " +
+                QuestionsTable1.COLUMN_ANSWER_R + " TEXT" +
+                ")";
+        db.execSQL(SQL_CREATE_QUESTIONS_TABLE1);
+        fillQuestionsTable1();
+    }
+
+    private void fillQuestionsTable1() {
+
+        Question q1 = new Question("brain", "brain", "rain", "brain");
+        addQuestion1(q1);
+        Question q2 = new Question("tired", "fine", "tired","tired");
+        addQuestion1(q2);
+        Question q3 = new Question("fit", "feed", "feed", "feed");
+        addQuestion1(q3);
+        Question q4 = new Question("window", "win", "window" ,"window");
+        addQuestion1(q4);
+        Question q5 = new Question("CHILD", "CHILD", "CHILDREN", "CHILD");
+        addQuestion1(q5);
+        Question q6 = new Question("FAMILY", "MILI", "FAMILY", "FAMILY");
+        addQuestion1(q6);
+        Question q7 = new Question("FRESHER", "FRESS", "FRESHER", "FRESHER");
+        addQuestion1(q7);
+        Question q8 = new Question("BODY", "BOSS", "BODY", "BODY");
+        addQuestion1(q8);
+        Question q9 = new Question("Minh thoi", "GIL", "GIRL", "GIRL");
+        addQuestion1(q9);
+        Question q10 = new Question("Nhat Minh thoi", "KEEP", "BROAD", "KEEP");
+        addQuestion1(q10);
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + QuestionsTable.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + QuestionsTable1.TABLE_NAME);
         onCreate(db);
     }
 
@@ -78,6 +116,14 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         cv.put(QuestionsTable.COLUMN_ANSWER_R, question.getAnswerR());
         db.insert(QuestionsTable.TABLE_NAME, null, cv);
     }
+    private void addQuestion1(Question question) {
+        ContentValues cv = new ContentValues();
+        cv.put(QuestionsTable1.COLUMN_QUESTION, question.getQuestion());
+        cv.put(QuestionsTable1.COLUMN_ANSWER1, question.getAnswer1());
+        cv.put(QuestionsTable1.COLUMN_ANSWER2, question.getAnswer2());
+        cv.put(QuestionsTable1.COLUMN_ANSWER_R, question.getAnswerR());
+        db.insert(QuestionsTable1.TABLE_NAME, null, cv);
+    }
 
     public List<Question> getAllQuestions() {
         List<Question> questionList = new ArrayList<>();
@@ -91,6 +137,26 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 question.setAnswer1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_ANSWER1)));
                 question.setAnswer2(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_ANSWER2)));
                 question.setAnswerR(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_ANSWER_R)));
+                questionList.add(question);
+            } while (c.moveToNext());
+        }
+
+        c.close();
+        return questionList;
+    }
+    //getall
+    public List<Question> getAllQuestions_1() {
+        List<Question> questionList = new ArrayList<>();
+        db = getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT * FROM " + QuestionsTable1.TABLE_NAME, null);
+
+        if (c.moveToFirst()) {
+            do {
+                Question question = new Question();
+                question.setQuestion(c.getString(c.getColumnIndex(QuestionsTable1.COLUMN_QUESTION)));
+                question.setAnswer1(c.getString(c.getColumnIndex(QuestionsTable1.COLUMN_ANSWER1)));
+                question.setAnswer2(c.getString(c.getColumnIndex(QuestionsTable1.COLUMN_ANSWER2)));
+                question.setAnswerR(c.getString(c.getColumnIndex(QuestionsTable1.COLUMN_ANSWER_R)));
                 questionList.add(question);
             } while (c.moveToNext());
         }

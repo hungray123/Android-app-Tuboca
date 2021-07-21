@@ -9,9 +9,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import QuizList.QuizListView;
-import Vocabulary.Vocabulary_main;
+import TopicVocabulary.GridTopic;
 
 public class MainActivity extends AppCompatActivity  implements View.OnClickListener{
+
 
     private TextView quizTest;
     private TextView vocabulary;
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
                 break;
             case R.id.vocabulary:
                 Toast.makeText(this,"vocabulary",Toast.LENGTH_SHORT).show();
-                Intent intent1 =new Intent(MainActivity.this, Vocabulary_main.class);
+                Intent intent1 =new Intent(MainActivity.this , GridTopic.class);
                 startActivity(intent1);
                 break;
             case R.id.listening:

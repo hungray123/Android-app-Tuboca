@@ -4,75 +4,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:gravity="center_vertical"
     android:background="@drawable/bg_result"
     tools:context=".Result">
 
+
     <LinearLayout
 
-        android:layout_width="250dp"
-        android:padding="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
         android:background="@drawable/bg_app_10"
         android:orientation="vertical">
 
-        <TextView
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:padding="10dp">
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Correct Question: "
+              android:textSize="18dp"
+              android:padding="5dp"
+              android:layout_marginStart="5dp"
+              android:textColor="@color/white"
+              android:gravity="left" />
+          <TextView
+              android:layout_marginRight="5dp"
+              android:id="@+id/TotalQuestionR"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="4/5"
+              android:textSize="18dp"
+              android:padding="5dp"
+              android:textColor="@color/white"
+              android:gravity="right" />
+          <TextView
+              android:layout_below="@id/TotalQuestionR"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Coins:"
+              android:textSize="18dp"
+              android:padding="5dp"
+              android:layout_marginStart="5dp"
+              android:textColor="@color/white"
+              android:gravity="left"/>
+          <TextView
+              android:id="@+id/totalPoint"
+              android:layout_below="@id/TotalQuestionR"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="20"
+              android:padding="5dp"
+              android:textSize="18dp"
+              android:layout_marginEnd="5dp"
+              android:textColor="@color/white"
+              android:gravity="right"/>
+      </RelativeLayout>
 
-            android:id="@+id/TotalQuestionR"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Correct Question: "
-            android:textSize="15dp"
-            android:textColor="@color/white"
-            android:gravity="center"
-            />
-        <TextView
-
-            android:id="@+id/totalPoint"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Coins:123"
-            android:textSize="15dp"
-            android:textColor="@color/white"
-            android:gravity="center"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Amazing gut chop !"
-            android:textSize="15dp"
+            android:text="Amazing gút chóp !"
+            android:textSize="18dp"
             android:textColor="@color/white"
-            android:gravity="center"
-            />
+            android:gravity="center" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:textColor="@color/white"
-            android:layout_marginTop="15dp"
-            >
+            android:layout_marginTop="15dp">
+
             <Button
                 android:id="@+id/btPlayAgain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="PlayAgain"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="35dp"
                 android:padding="5dp"
                 android:textSize="10dp"
-
-                android:textAllCaps="false"
-
-                />
+                android:textAllCaps="false"/>
             <Button
                 android:id="@+id/btNext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:text="Next"
                 android:padding="5dp"
                 android:textSize="10dp"
-                android:textAllCaps="false"
-               />
+                android:layout_marginLeft="5dp"
+                android:textAllCaps="false" />
         </LinearLayout>
 
     </LinearLayout>
