@@ -5,30 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context="Listen.ListView">
+
+    <TextView
+
+        android:id="@+id/txttitlr1"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:padding="10dp"
+        android:layout_marginTop="45dp"
+        android:text="List Track Audio"
+        android:textStyle="bold"
+        android:textSize="30dp">
+
+    </TextView>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_marginTop="50dp"
-
         android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/txttitlr1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="List Track Audio"
-            android:textSize="22dp"
-            android:padding="10dp">
 
-        </TextView>
         <TextView
+            android:layout_margin="10dp"
             android:layout_below="@+id/txttitlr1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@color/purple_200"
             android:text="Click to Track do lítening"/>
     </RelativeLayout>
     <RelativeLayout
+        android:layout_margin="10dp"
+        android:background="@color/purple_200"
         android:id="@+id/rl"
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
@@ -44,13 +55,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="289dp"
+            android:layout_marginEnd="270dp"
             android:padding="10dp"
             android:text="Track 1"
+            android:textColor="@color/white"
             android:textSize="18dp" />
 
     </RelativeLayout>
     <RelativeLayout
+        android:layout_margin="10dp"
+        android:background="@color/purple_200"
         android:id="@+id/rl2"
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
@@ -66,14 +80,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="289dp"
+            android:layout_marginEnd="270dp"
             android:padding="10dp"
             android:text="Track 2"
+            android:textColor="@color/white"
             android:textSize="18dp" />
 
     </RelativeLayout>
     <RelativeLayout
-
+        android:layout_margin="10dp"
+        android:background="@color/purple_200"
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -88,13 +104,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="289dp"
+            android:layout_marginEnd="270dp"
             android:padding="10dp"
             android:text="Track 3"
+            android:textColor="@color/white"
             android:textSize="18dp" />
 
     </RelativeLayout>
     <RelativeLayout
+        android:layout_margin="10dp"
+        android:background="@color/purple_200"
 
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
@@ -110,13 +129,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="289dp"
+            android:layout_marginEnd="270dp"
             android:padding="10dp"
             android:text="Track 4"
+            android:textColor="@color/white"
             android:textSize="18dp" />
 
     </RelativeLayout>
     <RelativeLayout
+        android:layout_margin="10dp"
+        android:background="@color/purple_200"
 
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
@@ -132,14 +154,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="289dp"
+            android:layout_marginEnd="270dp"
             android:padding="10dp"
             android:text="Track 5"
+            android:textColor="@color/white"
             android:textSize="18dp" />
 
     </RelativeLayout>
     <RelativeLayout
-
+        android:layout_margin="10dp"
+        android:background="@color/purple_200"
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -154,9 +178,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="289dp"
+            android:layout_marginEnd="270dp"
             android:padding="10dp"
             android:text="Track 6"
+            android:textColor="@color/white"
             android:textSize="18dp" />
 
     </RelativeLayout>

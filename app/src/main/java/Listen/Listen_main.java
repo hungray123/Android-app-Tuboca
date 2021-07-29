@@ -27,7 +27,7 @@ public class Listen_main extends AppCompatActivity { // khai báo
     ImageView       btSkip, btPlay , btStop ,btNext ;
     ArrayList<Song> arraySong;
     MediaPlayer mediaPlayer;
-    int position =0;
+    int position = 0 ;
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -185,9 +185,9 @@ public class Listen_main extends AppCompatActivity { // khai báo
     private void AddSong() {
         arraySong   = new ArrayList<>();
         arraySong.add(new Song("Holiday" , R.raw.holiday));
-        arraySong.add(new Song("Meet" , R.raw.meet));
-        arraySong.add(new Song("Travek" , R.raw.travel));
-        arraySong.add(new Song("Restaurant" , R.raw.gapmat));
+        arraySong.add(new Song("Meet"    , R.raw.meet));
+        arraySong.add(new Song("Travel"  , R.raw.travel));
+        arraySong.add(new Song("Restaurant", R.raw.gapmat));
 
 
 // dung viet hoa no bi loi

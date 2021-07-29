@@ -9,19 +9,23 @@ public class Song {
         File = file;
     }
 
-    public String getTitle() {
+    public String getTitle()
+    {
         return Title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(String title)
+    {
         Title = title;
     }
 
-    public int getFile() {
+    public int getFile()
+    {
         return File;
     }
 
-    public void setFile(int file) {
+    public void setFile(int file)
+    {
         File = file;
     }
 }
