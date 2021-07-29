@@ -8,6 +8,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import Listen.ListView;
+import Listen.Listen_main;
 import QuizList.QuizListView;
 import TopicVocabulary.GridTopic;
 
@@ -36,8 +38,8 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
           quizTest.setOnClickListener(this);
         vocabulary=findViewById(R.id.vocabulary);
         vocabulary.setOnClickListener(this);
-//        listening=findViewById(R.id.listening);
-//        listening.setOnClickListener(this);
+        listening=findViewById(R.id.listening);
+        listening.setOnClickListener(this);
 //        Video=findViewById(R.id.video);
 //        Video.setOnClickListener(this);
 
@@ -56,8 +58,11 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
                 Intent intent1 =new Intent(MainActivity.this , GridTopic.class);
                 startActivity(intent1);
                 break;
+                //phan cua m day
             case R.id.listening:
                 Toast.makeText(this,"listening",Toast.LENGTH_SHORT).show();
+                Intent intent2 =new Intent(this, ListView.class);
+                startActivity(intent2);
                 break;
             case R.id.video:
                 Toast.makeText(this,"video",Toast.LENGTH_SHORT).show();

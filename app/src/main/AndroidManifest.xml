@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.English">
-        <activity android:name="VocabularyFruits.Vocabulary_fruits"></activity>
+        <activity android:name="Listen.ListView"></activity>
+        <activity android:name="Listen.Listen_main" />
+        <activity android:name="VocabularyFruits.Vocabulary_fruits" />
         <activity android:name="QuizList.Quizlv2" />
         <activity android:name="TopicVocabulary.GridTopic" />
         <activity

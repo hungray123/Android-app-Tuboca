@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/BlanchedAlmond"
+    tools:context="Listen.Listen_main">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="20dp"
+        android:text="Listen"
+        android:textSize="50dp"
+        android:textColor="@color/purple_200"
+        android:textStyle="bold"
+        android:id="@+id/txtls"/>
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:layout_below="@+id/txtTimeSong"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="513dp"
+        android:layout_marginBottom="174dp"
+        android:gravity="center"
+        android:text="Name"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_baseline_skip_previous_24"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginBottom="50dp"
+        android:id="@+id/btSkip"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="238dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/ic_baseline_stop_24"
+        android:id="@+id/btStop"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="327dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/ic_baseline_skip_next_24"
+        android:id="@+id/btNext"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="137dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/ic_baseline_play_arrow_24"
+        android:id="@+id/btPlay"/>
+
+    <SeekBar
+        android:id="@+id/skSong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="13dp"
+        android:layout_above="@+id/btNext"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <TextView
+        android:id="@+id/txtTimeSong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        android:textSize="20sp"
+        android:layout_above="@+id/skSong"
+        android:layout_alignLeft="@+id/skSong"
+        android:layout_alignRight="@+id/skSong"
+        android:layout_marginBottom="12dp"/>
+
+    <TextView
+        android:id="@+id/txtTimeTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btNext"
+        android:layout_alignLeft="@+id/skSong"
+        android:layout_alignRight="@+id/skSong"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="349dp"
+        android:layout_marginLeft="339dp"
+        android:layout_marginRight="-46dp"
+        android:layout_marginBottom="39dp"
+        android:text="00:00"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="381dp"
+        android:layout_height="364dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="205dp"
+        app:srcCompat="@drawable/listen" />
+
+</RelativeLayout>
